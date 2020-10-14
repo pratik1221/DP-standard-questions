@@ -76,7 +76,35 @@ ll LONGEST_COMMON_SUBSTRING(char s1[],char s2[],ll m,ll n)
     }
     return maxi;
 }
-                                
+                                **MINIMUM NUMBER OF COINS(COIN CHAANGE PART1)**
+ll minimumnumberofcoins(ll c[],ll n,ll amount)
+{
+    ll dp[amount+1];
+
+    dp[0]=0;
+
+    f(i,1,amount+1)
+    dp[i]=INF;
+
+    f(i,1,amount+1)
+    {
+       ll ans=INF;
+       f(j,0,n)
+       {
+            if(c[j]<=i)
+            ans=min(ans,dp[i-c[j]]);
+       }
+        if(ans==INF)
+        dp[i]=INF;
+        else
+        dp[i]=ans+1;
+        
+    }
+    if(dp[amount]==INF)
+    return -1;
+    else
+     return dp[amount];
+}
                           **coin change problem (infinite coins)-number of ways**
                           
 ll numberofways(ll c[],ll n,ll amount)
