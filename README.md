@@ -1,7 +1,49 @@
 # DP-standard-questions
 
+                          **Knapsack**
+ 0/1
+ ll knapsack(ll wt[],ll p[],ll w,ll n)
+{
+    if(n==0||w==0)
+    return 0;
+    else if(wt[n]>w)
+    return knapsack (wt,p,w,n-1);
+    else
+    return max(p[i-1]+knapsack(wt,p,w-wt[n],n-1),knapsack(wt,p,w,n-1));
+}
+ll kp(ll n,ll w)
+{
+    if(w<0)
+    return INT_MIN;
+    if(n==0)
+    if(dp[w][n]!=-1)
+    return dp[w][n];
+    else
+    return dp[n][m]=max(profit[i-1]+ks(n-1,w-wt[n-1]),ks(n-1,w));
+    
+}
 
-                            **LCS**
+Multiple occurences
+
+ ll knapsack(ll wt[],ll p[],ll w,ll n)
+{
+    if(n==0||w==0)
+    return 0;
+    else if(wt[n]>w)
+    return knapsack (wt,p,w,n-1);
+    else
+    return max(p[i-1]+knapsack(wt,p,w-wt[n],n),knapsack(wt,p,w,n-1));
+}
+
+                           
+                           
+                           
+                           
+                           
+                           
+                           
+                           
+                           **LCS**
 ll LCS(char s1[],char s2[],ll m,ll n)
 {
     ll dp[m+1][n+1];
